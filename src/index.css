@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=TikTok+Sans:opsz,wght@12..36,300..900&display=swap');
+
+@import "tailwindcss";
+
+*{
+    font-family: Outfit;
+}
+.nameShadow{
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /* overflow-x: hidden; prevents scroll */
+  }
+
+html {
+    scroll-behavior: smooth;
+  }
