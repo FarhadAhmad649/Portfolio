@@ -3,37 +3,44 @@ import estate from './estate.jpg'
 import prescripto from './prescripto.jpg'
 import todolist from './todolist.jpg'
 import ecommerce from './ecommerce.jpg'
+import banner_car from './banner_car_image.png'
 
 const projects = [
+  {
+    image: banner_car,
+    title: "CarRental ",
+    description:
+      "A full-stack car rental platform that allows users to browse available cars, view detailed specifications, and book vehicles for specific dates. The system helps streamline the rental process by managing availability, bookings, and user requests in a structured and user-friendly interface.",
+  },
   {
     image: prescripto,
     title: "Prescripto",
     description:
-      "Prescripto is a doctor-patient management system that lets patients book appointments easily and helps doctors manage their schedules efficiently.",
+      "Prescripto is a full-stack doctor–patient appointment management system that streamlines healthcare scheduling. It allows patients to browse doctors and book appointments easily, while doctors can manage their availability, appointments, and schedules through a dedicated dashboard.",
   },
   {
     image: ecommerce,
     title: "eCommerce Plateform",
     description:
-      "An e-commerce platform that allows users to browse products, add them to a cart, and make secure purchases, while providing sellers with an easy way to manage their inventory and orders.",
+      "An e-commerce platform that enables users to browse products, manage a shopping cart, and complete secure purchases, while allowing sellers to manage products and orders through an admin interface.",
   },
   {
     image: estate,
     title: "Real eState",
     description:
-      "A real estate platform that helps users browse, buy, rent, or sell properties efficiently, providing detailed listings, property information, and contact options for agents.",
+      "A full-stack real estate platform that allows users to browse property listings, view detailed property information, and search/filter based on location, price, and property type. It provides a seamless experience for exploring and discovering properties efficiently.",
   },
   {
     image: chatbot,
     title: "ChatBot",
     description:
-      "An AI-powered chatbot that interacts with users in real-time, answers queries, and provides information or assistance efficiently.",
+      "An AI-powered chatbot that enables real-time conversations with users, providing instant responses, query handling, and interactive assistance. It is designed to simulate human-like interaction and deliver contextual answers efficiently.",
   },
   {
     image: todolist,
     title: "TodoList",
     description:
-      "A simple and interactive To-Do List app that helps users organize tasks, set priorities, and track their daily activities efficiently.",
+      "A task management application that allows users to create, organize, and track daily tasks with priorities and completion status for better productivity.",
   },
 ];
 

@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
+import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
@@ -12,7 +12,7 @@ function Portfolio() {
         <Navbar />
       </section>
       <section id="home">
-        <Home />
+        <Hero />
       </section>
       <section id="about">
         <About />

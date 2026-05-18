@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
-import menuIcon from "../assets/menu_icon.svg";
-import crossIcon from "../assets/cross_icon.svg";
 
 function Navbar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -16,99 +13,128 @@ function Navbar() {
       document.body.style.overflow = "auto";
     };
   }, [showMobileMenu]);
+
+  const navLinks = [
+    { name: "Home", href: "#Home" },
+    { name: "About", href: "#About" },
+    { name: "Projects", href: "#Projects" },
+    { name: "Skills", href: "#Skills" },
+    { name: "Contact", href: "#Contact" },
+  ];
+
   return (
     <>
-      <div className="sticky top-0 z-30 backdrop-blur-lg h-15 w-full flex justify-between items-center bg-cyan-950 text-white">
-        {/* Left Section */}
-        <div className="font-bold ml-5 lg:ml-15  text-xl cursor-pointer">
-          Farhad_Ahmad
-        </div>
+      {/* Main Navbar */}
+      <nav className="fixed top-0 left-0 w-full z-40 bg-[#050d1a]/80 backdrop-blur-md border-b border-cyan-500/15 font-['DM_Sans',sans-serif] transition-all duration-300">
+        <div className="max-w-[1200px] mx-auto px-6 h-20 flex justify-between items-center">
+          {/* Logo / Brand */}
+          <div className="font-['Syne',sans-serif] text-2xl font-extrabold cursor-pointer group">
+            <span className="bg-gradient-to-br from-cyan-500 to-indigo-500 bg-clip-text text-transparent transition-all duration-300 group-hover:brightness-125">
+              FA.
+            </span>
+          </div>
 
-        {/* Middle Section */}
-        <div className="hidden sm:hidden md:flex gap-3 lg:gap-6 sticky top-0 z-50 backdrop-blur-lg ">
-          <a className="font-meduim hover:text-gray-300" href="#home">
-            Home
-          </a>
-          <a className="font-meduim hover:text-gray-300" href="#about">
-            About
-          </a>
-          <a className="font-meduim hover:text-gray-300" href="#projects">
-            Projects
-          </a>
-          <a className="font-meduim hover:text-gray-300" href="#skills">
-            Skills
-          </a>
-          <a className="font-meduim hover:text-gray-300" href="#contact">
-            Contact
-          </a>
-        </div>
+          {/* Desktop Links */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-[0.95rem] font-medium text-slate-300 hover:text-cyan-400 transition-colors duration-300 relative group"
+              >
+                {link.name}
+                {/* Animated underline effect */}
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-cyan-400 transition-all duration-300 group-hover:w-full" />
+              </a>
+            ))}
+          </div>
 
-        {/* Right Section */}
-        <div className="flex items-center gap-3 mr-5 lg:mr-15">
-          {/* Mobile-Menu */}
-          <div className="lg:hidden md:hidden cursor-pointer">
-            <img
-              className="size-7 "
-              src={menuIcon}
-              alt="Menu"
+          {/* Mobile Menu Toggle Button */}
+          <div className="md:hidden flex items-center">
+            <button
               onClick={() => setShowMobileMenu(true)}
-            />
+              className="text-cyan-500 hover:text-cyan-400 transition-colors focus:outline-none p-2 -mr-2"
+              aria-label="Open Menu"
+            >
+              <svg
+                className="w-7 h-7"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
           </div>
         </div>
-      </div>
+      </nav>
+
+      {/* Mobile Menu Overlay (Darkens the background) */}
       <div
-        className={`lg:hidden ${
-          showMobileMenu
-            ? "fixed w-60 h-90 z-50 text-white bg-cyan-900 top-0 right-0 bottom-0 transition-all overflow-hidden"
-            : "h-0 w-0 overflow-hidden"
+        className={`fixed inset-0 bg-[#050d1a]/80 backdrop-blur-sm z-50 transition-opacity duration-300 md:hidden ${
+          showMobileMenu ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setShowMobileMenu(false)}
+      />
+
+      {/* Mobile Menu Drawer (Slides in from the right) */}
+      <div
+        className={`fixed top-0 right-0 h-full w-[260px] bg-[#0a1526] border-l border-cyan-500/20 z-50 transform transition-transform duration-300 ease-in-out md:hidden flex flex-col shadow-[-10px_0_30px_rgba(0,0,0,0.5)] ${
+          showMobileMenu ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex justify-end p-6 cursor-pointer">
-          <img
-            className="size-6"
-            src={crossIcon}
-            alt="Hide"
+        {/* Close Button Header */}
+        <div className="h-20 flex items-center justify-end px-6 border-b border-cyan-500/10">
+          <button
             onClick={() => setShowMobileMenu(false)}
-          />
+            className="text-slate-400 hover:text-cyan-400 transition-colors focus:outline-none p-2 -mr-2 bg-white/5 rounded-full"
+            aria-label="Close Menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
         </div>
-        <ul className="flex flex-col gap-2 px-5 text-lg font-medium items-center mt-5">
-          <a
-            href="#navbar"
-            className="px-5 py-2 rounded-full inline-block hover:shadow-lg active:bg-gray-50 active:text-black"
-            onClick={() => setShowMobileMenu(false)}
-          >
-            Home
-          </a>
-          <a
-            href="#about"
-            className="px-5 py-2 rounded-full inline-block hover:shadow-lg active:bg-gray-50 active:text-black"
-            onClick={() => setShowMobileMenu(false)}
-          >
-            About
-          </a>
-          <a
-            href="#projects"
-            className="px-5 py-2 rounded-full inline-block hover:shadow-lg active:bg-gray-50 active:text-black"
-            onClick={() => setShowMobileMenu(false)}
-          >
-            Projects
-          </a>
-          <a
-            href="#skills"
-            className="px-5 py-2 rounded-full inline-block hover:shadow-lg active:bg-gray-50 active:text-black"
-            onClick={() => setShowMobileMenu(false)}
-          >
-            Skills
-          </a>
-          <a
-            href="#contact"
-            className="px-5 py-2 rounded-full inline-block hover:shadow-lg active:bg-gray-50"
-            onClick={() => setShowMobileMenu(false)}
-          >
-            Contact
-          </a>
-        </ul>
+
+        {/* Mobile Links */}
+        <div className="flex flex-col gap-2 p-6 font-['DM_Sans',sans-serif]">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="text-lg font-medium text-slate-300 px-4 py-3 rounded-xl hover:bg-cyan-500/10 hover:text-cyan-400 transition-all duration-300 active:scale-95"
+              onClick={() => setShowMobileMenu(false)}
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+
+        {/* Bottom Decorative Element */}
+        <div className="mt-auto p-6">
+          <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
+        </div>
       </div>
+
+      {/* Ensure external fonts are loaded for this component */}
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+      `}</style>
     </>
   );
 }
