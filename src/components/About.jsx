@@ -1,3 +1,5 @@
+import logo from '../assets/logo.png'
+
 export default function About() {
   const skills = [
     { label: "HTML & CSS" },
@@ -43,14 +45,28 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-8 items-start">
           {/* Left — Bio Card (Only Text) */}
           <div className="bg-white/5 border border-cyan-500/15 rounded-[20px] p-8 md:p-9 backdrop-blur-md animate-fade-up delay-100">
-            <div className="relative w-20 h-20 mb-5">
-              <div className="absolute inset-[-6px] rounded-full border-2 border-cyan-500 opacity-50 animate-[pulse-ring_2.5s_ease-out_infinite]" />
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-500 to-indigo-500 flex items-center justify-center">
-                <span className="font-['Syne',sans-serif] text-3xl font-extrabold text-white">
-                  A
-                </span>
+            <div className="relative group w-20 h-20 mb-5 cursor-pointer">
+              {/* 1. Enhanced Pulse Ring: Added a subtle blur, glow, and hover expansion */}
+              <div className="absolute inset-[-6px] rounded-full border border-cyan-500/50 bg-cyan-500/10 blur-[2px] opacity-70 group-hover:opacity-100 group-hover:inset-[-8px] transition-all duration-500 animate-[pulse-ring_2.5s_ease-out_infinite]" />
+
+              {/* 2. Inner Gradient Wrapper: Uses w-full/h-full and p-[2px] to create a perfect gradient border effect */}
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-indigo-600 p-[2px] flex items-center justify-center relative shadow-lg group-hover:shadow-cyan-500/50 transition-shadow duration-300">
+                {/* 3. Image Container: Enforces a perfect circle and clips the image properly */}
+                <div className="w-full h-full rounded-full overflow-hidden bg-[#050d1a] relative flex items-center justify-center">
+                  {/* 4. Image: Added w-full h-full and a smooth zoom effect on hover */}
+                  <img
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                    src={logo}
+                    alt="logo"
+                  />
+
+                  {/* Fallback Text (Optional): In case the logo fails to load or is missing */}
+                  {/* <span className="absolute font-['Syne',sans-serif] text-3xl font-extrabold text-white z-[-1]">L</span> */}
+                </div>
               </div>
-              <span className="absolute bottom-1 right-1 w-3.5 h-3.5 rounded-full bg-green-500 border-2 border-[#050d1a] shadow-[0_0_8px_#22c55e]" />
+
+              {/* 5. Enhanced Status Dot: Adjusted positioning to hug the circle tighter and increased shadow intensity */}
+              <span className="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-green-500 border-[2.5px] border-[#050d1a] shadow-[0_0_10px_rgba(34,197,94,0.6)] z-10" />
             </div>
 
             <h3 className="font-['Syne',sans-serif] text-xl font-bold text-sky-100 mb-1.5">
@@ -72,7 +88,7 @@ export default function About() {
           </div>
 
           {/* Right — Skills & Stats */}
-          <div className="flex flex-col gap-8 animate-fade-up delay-200">
+          <div className="flex flex-col gap-8 animate-fade-up delay-200 mt-20">
             {/* Compact Skills Section */}
             <div>
               <h3 className="font-['Syne',sans-serif] text-lg font-bold text-sky-100 mb-4 tracking-wide">

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import logo from '../assets/logo.png'
 
 function Navbar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -28,10 +29,13 @@ function Navbar() {
       <nav className="fixed top-0 left-0 w-full z-40 bg-[#050d1a]/80 backdrop-blur-md border-b border-cyan-500/15 font-['DM_Sans',sans-serif] transition-all duration-300">
         <div className="max-w-[1200px] mx-auto px-6 h-20 flex justify-between items-center">
           {/* Logo / Brand */}
-          <div className="font-['Syne',sans-serif] text-2xl font-extrabold cursor-pointer group">
-            <span className="bg-gradient-to-br from-cyan-500 to-indigo-500 bg-clip-text text-transparent transition-all duration-300 group-hover:brightness-125">
-              FA.
-            </span>
+          <div className="relative inline-flex items-center justify-center cursor-pointer group p-2">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-indigo-500 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 rounded-full" />
+            <img
+              src={logo}
+              alt="logo"
+              className="h-14 relative z-10 transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_rgba(6,182,212,0.6)]"
+            />
           </div>
 
           {/* Desktop Links */}
