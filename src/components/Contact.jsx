@@ -1,5 +1,5 @@
 import React from "react";
-import contact from "../assets/contact.jpg";
+import contact from "../assets/assets";
 import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 
 function Contact() {

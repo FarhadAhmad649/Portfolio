@@ -1,5 +1,5 @@
 import React from "react";
-import profile2 from "../assets/Profile2.png";
+import profile from "../assets/assets";
 
 function Home() {
   return (
@@ -109,7 +109,7 @@ function Home() {
           <div className="relative w-full max-w-[320px] sm:max-w-[380px] aspect-square rounded-3xl p-1 bg-gradient-to-br from-cyan-500/30 to-indigo-500/30 backdrop-blur-sm animate-[float_6s_ease-in-out_infinite]">
             <img
               className="w-full h-full object-cover rounded-[22px] bg-[#050d1a]"
-              src={profile2}
+              src={profile}
               alt="Profile Image"
             />
           </div>

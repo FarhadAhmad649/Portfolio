@@ -1,9 +1,9 @@
-import chatbot from './chatbot.jpg'
-import estate from './estate.jpg'
-import prescripto from './prescripto.jpg'
-import todolist from './todolist.jpg'
-import ecommerce from './ecommerce.jpg'
-import banner_car from './banner_car_image.png'
+import chatbot from './assets'
+import estate from './assets'
+import prescripto from './assets'
+import todolist from './assets'
+import ecommerce from './assets'
+import banner_car from './assets'
 
 const projects = [
   {
