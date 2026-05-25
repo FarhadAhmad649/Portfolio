@@ -8,6 +8,8 @@ import prescripto from '../assets/prescripto.jpg'
 import profile from '../assets/profile.png'
 import todolist from '../assets/todolist.jpg'
 
-export const assets = {
+const assets = {
     car, chatbot, contact, ecommerce, estate, logo, prescripto, profile, todolist
 }
+
+export default assets;

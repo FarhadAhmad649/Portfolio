@@ -1,4 +1,4 @@
-import logo from '../assets/assets'
+import assets from '../assets/assets';
 
 export default function About() {
   const skills = [
@@ -56,7 +56,7 @@ export default function About() {
                   {/* 4. Image: Added w-full h-full and a smooth zoom effect on hover */}
                   <img
                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                    src={logo}
+                    src={assets.logo}
                     alt="logo"
                   />
 

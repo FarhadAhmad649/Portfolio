@@ -1,6 +1,6 @@
 import React from "react";
-import contact from "../assets/assets";
 import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
+import assets from "../assets/assets";
 
 function Contact() {
   return (
@@ -50,7 +50,7 @@ function Contact() {
             <div className="relative rounded-2xl p-1 bg-gradient-to-br from-cyan-500/20 to-indigo-500/20 backdrop-blur-sm overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-t from-[#050d1a]/80 via-transparent to-transparent z-10 pointer-events-none" />
               <img
-                src={contact}
+                src={assets.contact}
                 alt="Contact placeholder"
                 className="w-full h-56 object-cover rounded-xl transition-transform duration-500 group-hover:scale-105"
               />

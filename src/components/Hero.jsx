@@ -1,5 +1,6 @@
 import React from "react";
-import profile from "../assets/assets";
+import assets from "../assets/assets";
+
 
 function Home() {
   return (
@@ -51,7 +52,8 @@ function Home() {
               View Projects
             </a>
             <a
-              href="#Projects"
+              href="/cv.pdf"
+              download
               className="px-6 py-2.5 border border-indigo-500/30 rounded-xl text-sm font-medium text-indigo-50 bg-indigo-500/5 hover:bg-indigo-500/10 transition-all duration-300 backdrop-blur-sm"
             >
               Download CV
@@ -109,7 +111,7 @@ function Home() {
           <div className="relative w-full max-w-[320px] sm:max-w-[380px] aspect-square rounded-3xl p-1 bg-gradient-to-br from-cyan-500/30 to-indigo-500/30 backdrop-blur-sm animate-[float_6s_ease-in-out_infinite]">
             <img
               className="w-full h-full object-cover rounded-[22px] bg-[#050d1a]"
-              src={profile}
+              src={assets.profile}
               alt="Profile Image"
             />
           </div>

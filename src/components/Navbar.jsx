@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import logo from '../assets/assets'
+import assets from "../assets/assets";
 
 function Navbar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -32,7 +32,7 @@ function Navbar() {
           <div className="relative inline-flex items-center justify-center cursor-pointer group p-2">
             <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-indigo-500 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500 rounded-full" />
             <img
-              src={logo}
+              src={assets.logo}
               alt="logo"
               className="h-14 relative z-10 transition-all duration-300 group-hover:scale-105 group-hover:drop-shadow-[0_0_12px_rgba(6,182,212,0.6)]"
             />
